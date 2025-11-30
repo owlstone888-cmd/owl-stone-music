@@ -3,307 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owl Stone Music</title>
-    <!-- ПОСИЛАННЯ НА ФАВІКОН (додано тут) -->
-    <!-- Вам потрібно буде розмістити ваш favicon.ico або favicon.png у корені сайту. -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Завантажуємо Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Завантажуємо Font Awesome для іконок --><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Приклад Вебсторінки з Favicon</title>
+    <!-- Додавання favicon за допомогою наданого посилання -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/3JzBsPqt/12.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Імпортуємо футуристичні шрифти */
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600&display=swap');
-
-        :root {
-            --neon-blue: #00f3ff; /* Колір цианіду */
-            --neon-purple: #bc13fe; /* Колір маджента */
-            --bg-dark: #050510; /* Дуже темний фон */
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Футуристичний шрифт для назв */
-        h1, h2, h3, .brand-font {
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        /* Ефект неонового світіння тексту */
-        .text-neon-title {
-            -webkit-text-stroke: 1px rgba(255,255,255,0.8);
-            color: transparent;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Неонове світіння боксу (рамки) */
-        .box-neon-blue {
-            box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue) inset;
-            border: 1px solid var(--neon-blue);
-        }
-
-        /* Анімація зоряного фону (імітація руху в космосі) */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
-            animation: starsMove 100s linear infinite;
-        }
-
-        @keyframes starsMove {
-            from {background-position: 0 0;}
-            to {background-position: -1000px 1000px;}
-        }
-        
-        /* Кіберпанкова сітка на фоні */
-        .cyber-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%);
-        }
-
-        /* Анімація моргання очей сови (SVG) */
-        .owl-eye {
-            animation: blink 4s infinite;
-        }
-        @keyframes blink {
-            0%, 48%, 52%, 100% { fill-opacity: 1; filter: drop-shadow(0 0 5px var(--neon-purple)); }
-            50% { fill-opacity: 0.1; }
-        }
-        
-        /* Ефект "глітчу" при наведенні на головний заголовок */
-        .glitch-hover:hover {
-            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-            color: var(--neon-blue);
-        }
-        @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="min-h-screen flex items-center justify-center p-4">
 
-    <!-- Фоновий шар зірок та сітки --><div class="stars"></div>
-    <div class="cyber-grid"></div>
+    <div class="max-w-xl w-full bg-white p-8 rounded-xl shadow-2xl border border-blue-100">
+        <header class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-blue-800 mb-2">Ласкаво просимо!</h1>
+            <p class="text-gray-600">Ця сторінка демонструє інтеграцію favicon.</p>
+        </header>
 
-    <!-- Навігаційне меню (фіксоване зверху) --><nav class="fixed w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <span class="text-2xl brand-font tracking-widest text-white hover:text-cyan-400 transition-colors cursor-pointer">
-                        OWL<span class="text-cyan-400">STONE</span>
-                    </span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-gray-300 hover:text-cyan-400 hover:shadow-[0_0_10px_rgba(0,243,255,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 tracking-wider">ГОЛОВНА</a>
-                        <!-- Кнопка "АРТИСТИ" видалена, оскільки секція видалена --><a href="#releases" class="text-gray-300 hover:text-cyan-400 hover:shadow-[0_0_10px_rgba(0,243,255,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 tracking-wider">РЕЛІЗИ</a>
-                        <a href="#contact" class="text-gray-300 hover:text-purple-400 hover:shadow-[0_0_10px_rgba(188,19,254,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 tracking-wider">КОНТАКТИ</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-white hover:text-cyan-400">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+        <section class="space-y-4">
+            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h2 class="text-xl font-semibold text-blue-700">Favicon успішно додано!</h2>
+                <p class="text-gray-700 mt-2">Ви можете побачити іконку (favicon) вашого сайту у вкладці браузера, використовуючи посилання, яке ви надали.</p>
             </div>
-        </div>
-    </nav>
-
-    <!-- Секція Герой (Hero Section) - Центральний елемент --><section id="home" class="min-h-screen flex flex-col justify-center items-center relative pt-20 pb-10 px-4">
-        <!-- Головне Лого Сови (SVG) --><div class="w-64 h-64 md:w-80 md:h-80 mb-8 relative group">
-            <div class="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full group-hover:bg-purple-500/20 transition-colors duration-1000"></div>
-            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_10px_rgba(0,243,255,0.8)]">
-                <!-- Зовнішня геометрична форма --><path d="M40,60 L20,90 L40,160 L100,190 L160,160 L180,90 L160,60 L100,10 L40,60" 
-                    fill="none" stroke="#00f3ff" stroke-width="2" class="group-hover:stroke-purple-500 transition-colors duration-500"/>
-                
-                <!-- Внутрішні деталі --><path d="M40,60 L100,100 L160,60" fill="none" stroke="#bc13fe" stroke-width="2" />
-                <path d="M40,160 L100,120 L160,160" fill="none" stroke="#bc13fe" stroke-width="2" />
-                <line x1="100" y1="10" x2="100" y2="100" stroke="#00f3ff" stroke-width="1" />
-                <line x1="100" y1="120" x2="100" y2="190" stroke="#00f3ff" stroke-width="1" />
-                
-                <!-- Очі --><circle cx="70" cy="80" r="15" stroke="#fff" stroke-width="2" fill="none" />
-                <circle cx="130" cy="80" r="15" stroke="#fff" stroke-width="2" fill="none" />
-                
-                <!-- Зіниці, що світяться --><circle cx="70" cy="80" r="5" fill="#bc13fe" class="owl-eye" />
-                <circle cx="130" cy="80" r="5" fill="#bc13fe" class="owl-eye" />
-                
-                <!-- Дзьоб/Кристал з анімацією кольору --><path d="M90,120 L110,120 L100,160 Z" fill="none" stroke="#00f3ff" stroke-width="2">
-                    <animate attributeName="stroke" values="#00f3ff;#bc13fe;#00f3ff" dur="3s" repeatCount="indefinite" />
-                </path>
-            </svg>
-        </div>
-
-        <h1 class="text-4xl md:text-7xl font-bold text-center mb-2 tracking-widest text-neon-title glitch-hover select-none">
-            OWL STONE MUSIC
-        </h1>
-        <!-- Змінений текст під заголовком --><p class="text-cyan-200 tracking-[0.5em] text-sm md:text-base mb-12 opacity-80 font-light">
-            TRANCE & PROGRESSIVE • DRUM & BASS • CHILLOUT
-        </p>
-
-        <!-- Кнопка "Слухати зараз" --><a href="#releases" class="relative group inline-block px-10 py-4 font-bold text-white uppercase tracking-wider transition-all duration-300">
-            <span class="absolute top-0 left-0 w-full h-full border border-cyan-400 group-hover:bg-cyan-400/10 group-hover:box-neon-blue transition-all duration-300 skew-x-[-12deg] rounded-lg"></span>
-            <span class="relative z-10 brand-font group-hover:text-cyan-300">Слухати зараз</span>
-        </a>
-    </section>
-
-    <!-- Секція Останні Релізи --><section id="releases" class="py-20 relative bg-black/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest">
-                <span class="border-b-2 border-cyan-500 pb-2 shadow-[0_4px_10px_rgba(0,243,255,0.5)]">Останні Релізи</span>
-            </h2>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Реліз 1: TRANCE & PROGRESSIVE -->
-                <div class="group relative aspect-square bg-gray-900 border border-gray-800 hover:border-cyan-400 transition-colors duration-300 rounded-lg overflow-hidden">
-                    <!-- Замініть це посилання на обкладинку вашого альбому/треку 1 -->
-                    <img src="https://i.postimg.cc/VkQm4qvQ/Gemini-Generated-Image-5u5cp05u5cp05u5c-Photoroom.png" alt="image">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-sm">
-                        <div class="text-center">
-                            <h4 class="text-cyan-300 font-bold mb-2">Night City Lights</h4>
-                            <!-- Додаємо посилання, куди перенаправлятиме кнопка Play -->
-                            <a href="https://soundcloud.com/owl-stone/night-city-lights">
-                                <i class="fas fa-play-circle text-5xl text-white hover:text-cyan-400 transform hover:scale-110 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-
-                <!-- Реліз 2: DRUM & BASS -->
-                <div class="group relative aspect-square bg-gray-900 border border-gray-800 hover:border-purple-400 transition-colors duration-300 rounded-lg overflow-hidden">
-                    <!-- Замініть це посилання на обкладинку вашого альбому/треку 2 -->
-                    <img src="https://i.postimg.cc/QxHxtN9T/Gemini-Generated-Image-87gmh287gmh287gm-Photoroom.png" alt="image">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-sm">
-                        <div class="text-center">
-                            <h4 class="text-purple-300 font-bold mb-2">Forever Here</h4>
-                            <!-- Додаємо посилання, куди перенаправлятиме кнопка Play -->
-                            <a href="https://soundcloud.com/owl-stone/forever-here">
-                                <i class="fas fa-play-circle text-5xl text-white hover:text-purple-400 transform hover:scale-110 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-
-                <!-- Реліз 3: CHILLOUT -->
-                <div class="group relative aspect-square bg-gray-900 border border-gray-800 hover:border-cyan-400 transition-colors duration-300 rounded-lg overflow-hidden">
-                    <!-- Замініть це посилання на обкладинку вашого альбому/треку 3 -->
-                    <img src="https://i.postimg.cc/j23ByZZb/Gemini-Generated-Image-h976w2h976w2h976-Photoroom.png" alt="image">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-sm">
-                        <div class="text-center">
-                            <h4 class="text-cyan-300 font-bold mb-2">Lumiere- Кожен з нас (OWL STONE RMX)</h4>
-                            <!-- Додаємо посилання, куди перенаправлятиме кнопка Play -->
-                            <a href="https://soundcloud.com/owl-stone/lumiere-kozhen-z-nas-owl-stone">
-                                <i class="fas fa-play-circle text-5xl text-white hover:text-cyan-400 transform hover:scale-110 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-
-                <!-- Реліз 4: PROGRESSIVE -->
-                <div class="group relative aspect-square bg-gray-900 border border-gray-800 hover:border-purple-400 transition-colors duration-300 rounded-lg overflow-hidden">
-                    <!-- Замініть це посилання на обкладинку вашого альбому/треку 4 -->
-                    <img src="https://placehold.co/300x300/303030/bc13fe?text=PROGRES+HOUSE" alt="Progressive House" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-sm">
-                        <div class="text-center">
-                            <h4 class="text-purple-300 font-bold mb-2">Starlight</h4>
-                            <!-- Додаємо посилання, куди перенаправлятиме кнопка Play -->
-                            <a href="ВАШЕ_ПОСИЛАННЯ_НА_BANDCAMP_ТРЕК_4" target="_blank" class="text-white hover:text-purple-400 transform hover:scale-125 transition-all text-3xl">
-                                <i class="fas fa-play-circle text-5xl text-white hover:text-purple-400 transform hover:scale-110 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок з прямою контактною інформацією (Email) -->
-            <div class="text-center mb-10 p-6 max-w-xl mx-auto bg-purple-900/30 rounded-xl border border-purple-700 shadow-md">
-                <p class="text-xl font-semibold mb-2 text-purple-300">Для питань та співпраці:</p>
-                <a href="mailto:owlstone888@gmail.com" class="text-2xl text-white hover:text-purple-400 transition break-all font-mono">
-                    owlstone888@gmail.com
-                </a>
-                <p class="text-sm text-gray-400 mt-2">Ми відповідаємо протягом 24 годин.</p>
-            </div>
-
-
-    <!-- Футер (Контакти та Підписка) --><footer id="contact" class="py-12 border-t border-white/10 bg-black relative">
-        <div class="max-w-7xl mx-auto px-4 text-center">
             
-            <!-- Соціальні іконки з світінням --><div class="flex justify-center space-x-8 mb-8">
-                <a href="#" class="text-gray-400 hover:text-green-400 transition-all transform hover:scale-110 hover:shadow-[0_0_15px_rgba(74,222,128,0.5)] rounded-full p-2">
-                    <i class="fab fa-spotify text-3xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-pink-500 transition-all transform hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] rounded-full p-2">
-                    <i class="fab fa-apple text-3xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition-all transform hover:scale-110 hover:shadow-[0_0_15px_rgba(96,165,250,0.5)] rounded-full p-2">
-                    <i class="fab fa-twitter text-3xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-purple-400 transition-all transform hover:scale-110 hover:shadow-[0_0_15px_rgba(192,132,252,0.5)] rounded-full p-2">
-                    <i class="fab fa-instagram text-3xl"></i>
-                </a>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <p class="text-sm text-gray-500">
+                    Технічна примітка: Favicon додається за допомогою тегу 
+                    <code class="bg-gray-200 p-1 rounded text-red-600">&lt;link rel="icon" type="image/png" href="..."&gt;</code> 
+                    у розділі <code class="bg-gray-200 p-1 rounded text-red-600">&lt;head&gt;</code> документа.
+                </p>
             </div>
+        </section>
 
-            <div class="mb-6">
-                <h3 class="text-xl brand-font text-white mb-2">ПІДПИСКА НА НОВИНИ</h3>
-                <form class="flex justify-center max-w-md mx-auto">
-                    <input type="email" placeholder="ВВЕДІТЬ ВАШ EMAIL" class="bg-black/50 border border-gray-700 text-white px-4 py-2 w-full focus:outline-none focus:border-cyan-400 transition-colors rounded-l-lg">
-                    <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 brand-font uppercase transition-colors rounded-r-lg">Приєднатись</button>
-                </form>
-            </div>
+        <footer class="mt-8 text-center text-sm text-gray-400">
+            &copy; 2025 Приклад Вебсторінки. Усі права захищені.
+        </footer>
+    </div>
 
-            <p class="text-gray-600 text-sm tracking-wider">
-                &copy; 2024 OWL STONE MUSIC. ВСІ ПРАВА ЗАХИЩЕНІ.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript для плавного прокручування
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Ефект паралаксу для логотипу сови
-        const heroSection = document.getElementById('home');
-        const owlLogo = document.querySelector('svg');
-        
-        heroSection.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth - e.pageX) / 20;
-            const y = (window.innerHeight - e.pageY) / 20;
-            owlLogo.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-    </script>
 </body>
 </html>
